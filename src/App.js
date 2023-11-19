@@ -10,6 +10,13 @@ const cors = require("cors");
 const connectDB = require("./connections/DbConnection");
 
 app.use(cors());
+app.use(
+  cors({
+    origin: "https://zendenta-appointment.netlify.app",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true, // Enable cookies and credentials for cross-origin requests
+  })
+);
 app.use(bodyParser.json());
 app.use("/", router);
 

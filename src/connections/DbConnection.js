@@ -1,5 +1,6 @@
 const Mongoose = require("mongoose");
-const localDB = "mongodb://0.0.0.0:27017/clinic-system";
+const localDB =
+  "mongodb+srv://nikhilpatil2705:Sangita27@cluster0.6aood1d.mongodb.net/";
 
 const connectDB = async () => {
   await Mongoose.connect(localDB, {

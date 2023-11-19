@@ -19,6 +19,7 @@ exports.getAppointmentsForAppointer = async (req, res) => {
       query.end_time = { $gte: toDate };
     }
     const appointments = await Appointment.find(query).lean();
+    console.log("appointmnets", appointments);
     const modifiedAppointments = appointments.map((app) => ({
       ...app,
       id: app._id,
